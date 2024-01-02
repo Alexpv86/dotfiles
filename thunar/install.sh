@@ -1,6 +1,6 @@
 #!/bin/bash
 
-paru thunar thunar-volman gvfs
+paru -S thunar thunar-volman gvfs
 
 # icons
 git clone git clone https://github.com/alvatip/Nordzy-icon
