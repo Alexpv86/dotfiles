@@ -9,3 +9,6 @@ bash polybar/install.sh
 
 # picom
 bash picom/install.sh
+
+# keyboard
+#bash keyboard/install.sh
