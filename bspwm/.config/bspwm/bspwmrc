@@ -9,8 +9,8 @@ polybar -r right &
 xsetroot -cursor_name left_ptr &
 
 bspc monitor HDMI-0 -d  󰨞 󰖟 1 2 3
-bspc monitor DVI-I-1 -d 7 8 9
 bspc monitor DVI-D-0 -d 4 5 6
+bspc monitor DVI-I-1 -d  8 9
 
 bspc config border_width        0
 bspc config window_gap          8
@@ -28,6 +28,9 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
 bspc rule -a Alacritty desktop='' follow=on
 bspc rule -a Code desktop=' 󰨞'
 bspc rule -a qutebrowser desktop=' 󰖟' follow=on
+
+bspc rule -a 'VirtualBox Manager' desktop=' ' follow=on
