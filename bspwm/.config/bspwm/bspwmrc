@@ -7,6 +7,7 @@ polybar -r center &
 polybar -r left &
 polybar -r right &
 xsetroot -cursor_name left_ptr &
+/usr/lib/xfce-polkit/xfce-polkit &
 
 bspc monitor HDMI-0 -d  󰨞 󰖟 1 2 3
 bspc monitor DVI-D-0 -d 4 5 6
@@ -30,7 +31,8 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 bspc rule -a Alacritty desktop='' follow=on
-bspc rule -a Code desktop=' 󰨞'
-bspc rule -a qutebrowser desktop=' 󰖟' follow=on
+bspc rule -a Code desktop='󰨞'
+bspc rule -a qutebrowser desktop='󰖟' follow=on
+bspc rule -a Yandex-browser desktop='󰖟' follow=on
 
-bspc rule -a 'VirtualBox Manager' desktop=' ' follow=on
+bspc rule -a 'VirtualBox Manager' desktop='' follow=on
