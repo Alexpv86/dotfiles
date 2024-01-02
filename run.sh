@@ -15,3 +15,6 @@ bash picom/install.sh
 
 # thunar
 #bash thunar/install.sh
+
+# qutebrowser
+#bash qutebrowser/install.sh
