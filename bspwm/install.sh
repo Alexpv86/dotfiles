@@ -2,4 +2,4 @@
 
 DIR=$(dirname $0)
 cp -r $DIR/.config ~
-cp .xinitrc ~
+cp $DIR/.xinitrc ~

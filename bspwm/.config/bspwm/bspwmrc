@@ -3,10 +3,10 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom &
 nitrogen --restore &
-polybar -r example &
+polybar -r center &
 xsetroot -cursor_name left_ptr &
 
-bspc monitor HDMI-0 -d cmd code web
+bspc monitor HDMI-0 -d  󰨞 󰖟 4
 bspc monitor DVI-I-1 -d 1 2 3
 bspc monitor DVI-D-0 -d 1 2 3
 
@@ -24,6 +24,6 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Alacritty desktop='term' follow=on
-bspc rule -a Code desktop='code'
-bspc rule -a qutebrowser desktop='web' follow=on
+bspc rule -a Alacritty desktop='' follow=on
+bspc rule -a Code desktop=' 󰨞'
+bspc rule -a qutebrowser desktop=' 󰖟' follow=on
