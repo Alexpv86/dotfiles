@@ -2,5 +2,5 @@
 
 DIR=$(dirname "$0")
 
-mkdir ~/.config/alacritty
+mkdir -p ~/.config/alacritty
 cp "$DIR/alacritty.toml" ~/.config/alacritty

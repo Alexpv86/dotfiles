@@ -2,4 +2,5 @@
 
 DIR=$(dirname "$0")
 
-sudo cp "$DIR/{pacman,paru}.conf" /etc/
+sudo cp "$DIR/pacman.conf" /etc/
+sudo cp "$DIR/paru.conf" /etc/
