@@ -1,4 +1,6 @@
 #!/bin/bash
 
+DIR=$(dirname "$0")
+
 mkdir ~/.config/alacritty
-cp alacritty.toml ~/.config/alacritty
+cp "$DIR/alacritty.toml" ~/.config/alacritty
