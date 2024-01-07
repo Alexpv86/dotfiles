@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # bspwm
 bash bspwm/install.sh
 bash bspwm/restart.sh
