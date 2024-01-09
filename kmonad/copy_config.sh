@@ -2,4 +2,4 @@
 
 DIR=$(dirname "$0")
 
-cp -r "$DIR/etc/*" /etc/
+sudo cp -r "$DIR/etc" /

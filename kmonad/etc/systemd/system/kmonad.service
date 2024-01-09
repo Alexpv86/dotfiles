@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/etc/kmonad_run.sh
+ExecStart=/etc/kmonad/kmonad_run.sh
 Restart=always
 RestartSec=5
 User=root
