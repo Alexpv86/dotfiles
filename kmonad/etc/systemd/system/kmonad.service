@@ -1,0 +1,14 @@
+[Unit]
+Description=kmonad
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/etc/kmonad_run.sh
+Restart=always
+RestartSec=5
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
