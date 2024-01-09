@@ -1,6 +1,7 @@
 #!/bin/bash
 
-paru -S thunar thunar-volman gvfs
+# tumbler for preview image
+paru -S thunar thunar-volman gvfs thunar-archive-plugin thunar-media-tags-plugin tumbler --noconfirm --needed
 
 # icons
 git clone git clone https://github.com/alvatip/Nordzy-icon
