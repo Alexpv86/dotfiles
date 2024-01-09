@@ -6,4 +6,4 @@ if [[ ! $(command -v paru) ]]; then
     makepkg -si
 fi
 
-paru -S xorg-xrandr lxappearance qt5ct awesome-terminal-fonts --noconfirm --needed
+paru -S xorg-xrandr lxappearance qt5ct awesome-terminal-fonts man-db --noconfirm --needed
