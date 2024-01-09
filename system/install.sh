@@ -1,7 +1,9 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin || exit
-makepkg -si
+if [[ ! $(command -v paru) ]]; then
+    git clone https://aur.archlinux.org/paru-bin.git
+    cd paru-bin || exit
+    makepkg -si
+fi
 
-paru -S xorg-xrandr ttf-jetbrains-mono-nerd --noconfirm --needed
+paru -S xorg-xrandr --noconfirm --needed
