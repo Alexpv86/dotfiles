@@ -23,3 +23,6 @@ bash thunar/install.sh
 
 # qutebrowser
 bash qutebrowser/install.sh
+
+# neovim
+bash nvim/install.sh
