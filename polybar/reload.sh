@@ -1,3 +1,3 @@
 #!/bin/bash
 
-polybar -r example &
+polybar -r center &
