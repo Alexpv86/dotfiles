@@ -1,6 +1,6 @@
 (defcfg
   ;; Basic configuration for input and output
-  input  (device-file "/dev/input/by-id/platform-i8042-serio-o-event-kbd")
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   output (uinput-sink "My KMonad output")
   ;; Set the fallthrough option so that all keys not explicitly defined will act normally
   fallthrough true
