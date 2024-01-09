@@ -5,8 +5,8 @@ config.load_autoconfig()
 
 dracula.draw.blood(c, {
     'spacing': {
-        'vertical': 6,
-        'horizontal': 8
+        'vertical': 1,
+        'horizontal': 1
     }
 })
 config.set("colors.webpage.darkmode.enabled", True)

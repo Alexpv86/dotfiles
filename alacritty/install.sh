@@ -1,3 +1,3 @@
 #!/bin/bash
 
-paru -S alacritty
+paru -S alacritty --noconfirm --needed

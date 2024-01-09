@@ -1,4 +1,3 @@
 #!/bin/bash
 
-DIR=$(dirname $0)
-cp -r "$DIR/.config" ~
+paru -S picom --noconfirm --needed
