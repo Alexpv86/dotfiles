@@ -8,6 +8,7 @@ polybar -r left &
 polybar -r right &
 xsetroot -cursor_name left_ptr &
 /usr/lib/xfce-polkit/xfce-polkit &
+kmonad .config/kmonad/config.kbd &
 
 bspc monitor HDMI-0 -d  󰨞 󰖟 1 2 3
 bspc monitor DVI-D-0 -d 4 5 6
