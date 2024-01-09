@@ -18,8 +18,8 @@ bash polybar/install.sh
 # picom
 bash picom/install.sh
 
-# qutebrowser
-bash qutebrowser/install.sh
-
 # thunar
 bash thunar/install.sh
+
+# qutebrowser
+bash qutebrowser/install.sh

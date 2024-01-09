@@ -22,8 +22,8 @@ bash polybar/copy_config.sh
 # picom
 bash picom/copy_config.sh
 
-# qutebrowser
-bash qutebrowser/copy_config.sh
-
 # thunar
 bash thunar/copy_config.sh
+
+# qutebrowser
+bash qutebrowser/copy_config.sh
