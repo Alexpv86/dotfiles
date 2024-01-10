@@ -6,6 +6,7 @@
   fallthrough true
   ;; Define the tapping term (in milliseconds)
   ;;tapping-term 200
+  allow-cmd true
 )
 
 (defsrc
@@ -28,11 +29,11 @@
   metl (tap-hold-next-release 200 ; met)
   metr (tap-hold-next-release 200 a met)
 
-  num (tap-hold-next-release 200 f11 (layer-toggle NUM))
+  num (tap-hold-next-release 200 ret (layer-toggle NUM))
   caps (tap-hold-next-release 200 esc (layer-toggle CAPS))
 
-  s_en (tap-hold-next-release 200 f12 lsft)
-  s_ru (tap-hold-next-release 200 f11 lctl)
+  s_en (tap-hold-next-release 200 (cmd-button "xkb-switch -s us") lsft)
+  s_ru (tap-hold-next-release 200 (cmd-button "xkb-switch -s ru") rsft)
   
   lm (tap-hold-next-release 200 m (layer-toggle M))
 
@@ -43,16 +44,16 @@
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
   tab  q    w    e    r    t    y    u    i    o    p    [    ]          del  end  pgdn  kp7  kp8  kp9  kp+
   @caps @metr    @alt_s    @ctl_d    @sft_f    g    h    @sft_j    @ctl_k    @alt_l    @metl    ' \  ret                        kp4  kp5  kp6
-  @s_en z    x    c    v    b    n    @lm    ,    .    /    rsft                 up         kp1  kp2  kp3  kprt
-  @s_ru lmet @num           spc            ralt           rctl            left down rght  kp0  kp.
+  @s_en z    x    c    v    b    n    @lm    ,    .    /    @s_ru                 up         kp1  kp2  kp3  kprt
+  lctl lmet @num           spc            ralt           rctl            left down rght  kp0  kp.
 )
 
 (deflayer NUM
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
   tab  q    w    e    r    t    y    1    2    3    p    [    ]          del  end  pgdn  kp7  kp8  kp9  kp+
-  caps a    s    d    f    g    h    4    5    6    7    ' \  ret                        kp4  kp5  kp6
-  lsft z    x    c    v    b    n    8    9    0    /    rsft                 up         kp1  kp2  kp3  kprt
+  caps @metr    @alt_s    @ctl_d    @sft_f   g    h    4    5    6    ;    ' \  ret                        kp4  kp5  kp6
+  lsft z    x    c    v    b    0    7    8    9    .    rsft                 up         kp1  kp2  kp3  kprt
   lctl lmet lalt           spc            ralt           rctl            left down rght  kp0  kp.
 )
 
@@ -60,7 +61,7 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
   tab  caps    up    e    r    t    y    u    i    o    p    [    ]          del  end  pgdn  kp7  kp8  kp9  kp+
-  caps left    down    right    f    g    bspc    ret    k    l    del    ' \  ret                        kp4  kp5  kp6
+  caps left    down    right    f    g    h    ret    bspc    l    del    ' \  ret                        kp4  kp5  kp6
   lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up         kp1  kp2  kp3  kprt
   lctl lmet lalt           spc            ralt           rctl            left down rght  kp0  kp.
 )
