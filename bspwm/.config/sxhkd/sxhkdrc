@@ -143,3 +143,6 @@ super + {Left,Down,Up,Right}
 super + ctrl + { Right,Left }
 	DIR={next.local,prev.local}; \
 	bspc node -d "$DIR" --follow
+
+Print
+  scrot --select '%F_%H-%S' -e 'mv $f ~/Documents/Screenshot/ '

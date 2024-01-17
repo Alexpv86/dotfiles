@@ -33,6 +33,7 @@ bspc rule -a Screenkey manage=off
 
 bspc rule -a Alacritty desktop='' follow=on
 bspc rule -a Code desktop='󰨞'
+bspc rule -a Neovim desktop='󰨞' follow=on
 bspc rule -a qutebrowser desktop='󰖟' follow=on
 bspc rule -a Yandex-browser desktop='󰖟' follow=on
 
