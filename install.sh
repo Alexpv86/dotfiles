@@ -18,3 +18,10 @@ for pkg in ${mainpkg[@]}; do
 		echo "${pkg} is already installed"
 	fi
 done
+
+echo
+echo "Install config files"
+stow -D -v .
+stow -v .
+sudo stow -D -v -t / root/
+sudo stow -v -t / root/
