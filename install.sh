@@ -6,10 +6,13 @@ mainpkg=(
 )
 
 for pkg in ${mainpkg[@]}; do
-	if [ ! paru -Qi ${pkg} ] &>/dev/null; then
+	paru -Qi ${pkg} &>/dev/null
+
+	if [[ $? == 1 ]] &>/dev/null; then
 		paru -S ${pkg} --noconfirm &>/dev/null
 
-		if [ ! paru -Qi ${pkg} ] &>/dev/null; then
+		paru -Qi ${pkg} &>/dev/null
+		if [[ $? == 0 ]] &>/dev/null; then
 			echo "${pkg} is installed"
 		else
 			echo "ERROR: ${pkg} failed to install"
