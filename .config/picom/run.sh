@@ -2,5 +2,5 @@
 
 while [[ true ]]; do
 	picom
-	sleep 1
+	sleep 60
 done
