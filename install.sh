@@ -27,6 +27,8 @@ mainpkg=(
 	alacritty # terminal
 	stow      # config manager
 
+	warpd
+
 	# Neovim
 	neovim
 	xclip
@@ -39,7 +41,7 @@ mainpkg=(
 	thunar-volman
 	thunar-archive-plugin
 	thunar-media-tags-plugin
-  gvfs
+	gvfs
 	tumbler
 )
 

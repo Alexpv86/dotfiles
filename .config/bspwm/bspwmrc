@@ -2,7 +2,7 @@
 
 #xrandr --output Virtual1 --mode 2560x1440
 #nitrogen --restore &
-source ~/.config/environment
+# source ~/.config/environment
 ~/.config/wallpapers/run.sh &
 
 sudo VBoxService
