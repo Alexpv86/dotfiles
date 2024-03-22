@@ -27,7 +27,7 @@ mainpkg=(
 	alacritty # terminal
 	stow      # config manager
 
-	warpd
+	warpd # Mouse emulator
 
 	# Neovim
 	neovim
