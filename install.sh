@@ -20,6 +20,10 @@ mainpkg=(
 	qt5ct
 	man-db
 	xorg-xrandr
+	zsh
+	lsd
+	xkb-switch
+	xorg-xsetroot
 
 	picom
 	rofi # menu
@@ -43,6 +47,8 @@ mainpkg=(
 	thunar-media-tags-plugin
 	gvfs
 	tumbler
+
+	yandex-browser-beta
 )
 
 for pkg in ${mainpkg[@]}; do
@@ -64,7 +70,15 @@ done
 
 echo
 echo "Install config files"
+sudo rm /etc/environment
 stow -D -v .
 stow -v .
 sudo stow -D -v -t / root/
 sudo stow -v -t / root/
+
+chsh -s /bin/zsh
+
+git config --global user.email "typewria@student.21-school.ru"
+git config --global user.name "typewria"
+
+cp -rf .local/share/* ~/.local/share/
