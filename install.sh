@@ -52,6 +52,7 @@ mainpkg=(
 
 	virtualbox-guest-utils
 	lazygit
+	feh
 )
 
 for pkg in ${mainpkg[@]}; do
