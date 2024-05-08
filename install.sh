@@ -55,6 +55,8 @@ mainpkg=(
 	feh
 	gtest
 	tmux
+	gcovr
+	bear
 )
 
 for pkg in ${mainpkg[@]}; do
