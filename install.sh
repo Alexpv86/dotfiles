@@ -48,7 +48,10 @@ mainpkg=(
 	gvfs
 	tumbler
 
-	yandex-browser-beta
+	yandex-browser
+
+	virtualbox-guest-utils
+	lazygit
 )
 
 for pkg in ${mainpkg[@]}; do
