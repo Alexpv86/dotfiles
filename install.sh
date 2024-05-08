@@ -54,6 +54,7 @@ mainpkg=(
 	lazygit
 	feh
 	gtest
+	tmux
 )
 
 for pkg in ${mainpkg[@]}; do
