@@ -18,8 +18,8 @@ return {
       --},
 
       trigger_events = { -- See :h events
-        immediate_save = { "BufLeave", "FocusLost" }, -- vim events that trigger an immediate save
-        defer_save = { "InsertLeave", "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
+        immediate_save = { "InsertLeave" }, -- vim events that trigger an immediate save
+        defer_save = { "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
         cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
       },
       -- function that takes the buffer handle and determines whether to save the current buffer or not
@@ -27,9 +27,9 @@ return {
       -- return false: if it's not ok to be saved
       -- if set to `nil` then no specific condition is applied
       condition = nil,
-      write_all_buffers = true, -- write all buffers when the current one meets `condition`
-      noautocmd = false, -- do not execute autocmds when saving
-      debounce_delay = 10000, -- delay after which a pending save is executed
+      write_all_buffers = false, -- write all buffers when the current one meets `condition`
+      noautocmd = true, -- do not execute autocmds when saving
+      debounce_delay = 300, -- delay after which a pending save is executed
     },
   },
 }
