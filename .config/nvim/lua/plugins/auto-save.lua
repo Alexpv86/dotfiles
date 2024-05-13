@@ -5,17 +5,17 @@ return {
 
     -- cmd = "",
     -- keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    event = { "BufLeave", "FocusLost" },
+    -- event = { "BufLeave", "FocusLost" },
 
     opts = {
       -- add your options that should be passed to the setup() function here
       -- position = "right",
       enabled = true,
-      --execution_message = {
-      --  message = function() -- message to print on save
-      --    return ""
-      --  end,
-      --},
+      execution_message = {
+        message = function() -- message to print on save
+          return ""
+        end,
+      },
 
       trigger_events = { -- See :h events
         immediate_save = { "InsertLeave" }, -- vim events that trigger an immediate save
@@ -29,7 +29,7 @@ return {
       condition = nil,
       write_all_buffers = false, -- write all buffers when the current one meets `condition`
       noautocmd = true, -- do not execute autocmds when saving
-      debounce_delay = 300, -- delay after which a pending save is executed
+      debounce_delay = 500, -- delay after which a pending save is executed
     },
   },
 }
