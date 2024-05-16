@@ -57,6 +57,8 @@ mainpkg=(
 	tmux
 	gcovr
 	bear
+
+	valgrind
 )
 
 for pkg in ${mainpkg[@]}; do
