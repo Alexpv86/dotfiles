@@ -1,4 +1,8 @@
 #!/bin/bash
+
+$(dirname ${0})/get_bing.sh
+sleep 900
+
 folder="$HOME/Documents/Wallpapers"
 extensions=("jpg" "png" "bmp" "jpeg")
 
@@ -14,8 +18,7 @@ if [[ ${#files[@]} == 0 ]]; then
 fi
 
 while [[ true ]]; do
-	sleep 1
 	random_file="${files[RANDOM % ${#files[@]}]}"
 	feh --bg-scale --no-fehbg -z -r "${random_file}"
-	sleep 360
+	sleep 900
 done
