@@ -25,13 +25,14 @@ mainpkg=(
 	xkb-switch
 	xorg-xsetroot
 	kbdd
+	bat
 
 	picom
 	rofi # menu
 	polybar
 	alacritty # terminal
 	stow      # config manager
-  xfce-polkit
+	xfce-polkit
 
 	warpd # Mouse emulator
 
@@ -82,6 +83,9 @@ done
 
 echo
 echo "Install config files"
+
+./install-other.sh
+
 sudo rm /etc/environment
 stow -D -v .
 stow -v .

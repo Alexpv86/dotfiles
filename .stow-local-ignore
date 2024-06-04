@@ -1,5 +1,6 @@
 \.git
 \.gitignore
+^/install-other.sh
 ^/install.sh
 ^/root
 ^/other
