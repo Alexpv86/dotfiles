@@ -87,6 +87,7 @@ echo "Install config files"
 ./install-other.sh
 
 sudo rm /etc/environment
+sudo rm /etc/pacman.conf
 stow -D -v .
 stow -v .
 sudo stow -D -v -t / root/
@@ -96,5 +97,7 @@ chsh -s /bin/zsh
 
 git config --global user.email "typewria@student.21-school.ru"
 git config --global user.name "typewria"
+
+# localectl --no-convert set-x11-keymap us,ru
 
 cp -rf .local/share/* ~/.local/share/
