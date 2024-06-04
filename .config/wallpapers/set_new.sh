@@ -1,6 +1,6 @@
 #!/bin/bash
 folder="$HOME/Documents/Wallpapers"
-extensions=("jpg" "png" "bmp" "jpeg")
+extensions=("jpg" "png" "bmp" "jpeg" "gif")
 
 files=()
 for ext in "${extensions[@]}"; do
@@ -13,9 +13,5 @@ if [[ ${#files[@]} == 0 ]]; then
 	exit
 fi
 
-while [[ true ]]; do
-	sleep 1
-	random_file="${files[RANDOM % ${#files[@]}]}"
-	feh --bg-scale --no-fehbg -z -r "${random_file}"
-	sleep 360
-done
+random_file="${files[RANDOM % ${#files[@]}]}"
+feh --bg-scale --no-fehbg -z -r "${random_file}"

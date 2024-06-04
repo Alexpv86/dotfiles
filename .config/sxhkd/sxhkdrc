@@ -4,6 +4,9 @@
 super + q
   systemctl suspend
 
+super + t
+	~/.config/wallpapers/set_new.sh
+
 super + x
   warpd --hint --oneshot; warpd --click 1
 
