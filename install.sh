@@ -24,12 +24,14 @@ mainpkg=(
 	lsd
 	xkb-switch
 	xorg-xsetroot
+	kbdd
 
 	picom
 	rofi # menu
 	polybar
 	alacritty # terminal
 	stow      # config manager
+  xfce-polkit
 
 	warpd # Mouse emulator
 

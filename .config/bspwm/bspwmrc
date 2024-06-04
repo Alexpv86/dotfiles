@@ -1,31 +1,21 @@
 #! /bin/sh
 
-#xrandr --output Virtual1 --mode 2560x1440
-#nitrogen --restore &
-# source ~/.config/environment
-~/.config/wallpapers/run.sh &
-
-sudo VBoxService
-VBoxClient-all
-xbanish &
-
+# sudo VBoxService
+# VBoxClient-all
 #sudo kmonad /etc/kmonad/gaming_kb_vb.kbd &
-pgrep -x sxhkd >/dev/null || sxhkd &
-#picom &
+
+./additional.sh &
+~/.config/wallpapers/run.sh &
 ~/.config/picom/run.sh &
-polybar -r center &
-#polybar -r left &
-#polybar -r right &
+
+pgrep -x sxhkd >/dev/null || sxhkd &
 xsetroot -cursor_name left_ptr &
+
 /usr/lib/xfce-polkit/xfce-polkit &
+xbanish &
 
 telegram-desktop &
 kbdd &
-
-bspc monitor Virtual1 -d   󰖟 1 2 3
-#bspc monitor HDMI-0 -d  󰨞 󰖟 1 2 3
-#bspc monitor DVI-D-0 -d 4 5 6
-#bspc monitor DVI-I-1 -d  8 9
 
 bspc config border_width 0
 bspc config window_gap 8
@@ -38,11 +28,11 @@ bspc config borderless_monocle true
 bspc config gapless_monocle false
 bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
 
 bspc rule -a Alacritty # desktop='' follow=on
 bspc rule -a Code desktop=''
@@ -50,5 +40,3 @@ bspc rule -a Neovim desktop='' follow=on
 bspc rule -a qutebrowser desktop='󰖟' follow=on
 bspc rule -a Yandex-browser desktop='󰖟' follow=on
 bspc rule -a TelegramDesktop desktop='1'
-
-bspc rule -a 'VirtualBox Manager' desktop='' follow=on
