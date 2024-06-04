@@ -1,6 +1,9 @@
 #
 # wm independent hotkeys
 #
+super + q
+  systemctl suspend
+
 super + x
   warpd --hint --oneshot; warpd --click 1
 
