@@ -2,7 +2,7 @@
 # wm independent hotkeys
 #
 super + q
-  systemctl suspend
+  sudo systemctl suspend
 
 super + e
 	~/.config/wallpapers/set_new.sh

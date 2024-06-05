@@ -50,6 +50,9 @@ mainpkg=(
 	thunar-media-tags-plugin
 	gvfs
 	tumbler
+	unzip
+	unrar
+	xarchiver
 
 	yandex-browser
 
