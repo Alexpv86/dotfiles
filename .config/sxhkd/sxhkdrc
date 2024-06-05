@@ -4,7 +4,7 @@
 super + q
   systemctl suspend
 
-super + t
+super + e
 	~/.config/wallpapers/set_new.sh
 
 super + x
@@ -15,7 +15,7 @@ super + alt + x
 
 # terminal emulator
 super + Return
-	alacritty
+	alacritty --command tmux
 
 # program launcher
 super + d
