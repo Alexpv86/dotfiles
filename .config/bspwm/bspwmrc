@@ -5,8 +5,10 @@
 #sudo kmonad /etc/kmonad/gaming_kb_vb.kbd &
 
 ~/.config/additional/bspwm.sh &
-~/.config/wallpapers/run.sh &
-~/.config/picom/run.sh &
+killall wallp-run.sh &>/dev/null
+~/.config/wallpapers/wallp-run.sh &
+killall picom-run.sh &>/dev/null
+~/.config/picom/picom-run.sh &
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 xsetroot -cursor_name left_ptr &

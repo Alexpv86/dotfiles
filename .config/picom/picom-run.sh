@@ -1,6 +1,6 @@
 #!/bin/bash
 
 while [[ true ]]; do
-	picom
-	sleep 60
+	picom &>/dev/null || exit
+	sleep 10
 done
