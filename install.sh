@@ -87,12 +87,12 @@ done
 echo
 echo "Install config files"
 
-./install-profiles.sh
+./profiles/install-profiles.sh
 
 sudo rm /etc/environment
 sudo rm /etc/pacman.conf
-stow -D -v .
-stow -v .
+stow -D -v home/
+stow -v home/
 sudo stow -D -v -t / root/
 sudo stow -v -t / root/
 
