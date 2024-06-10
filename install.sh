@@ -37,7 +37,7 @@ mainpkg=(
 	warpd # Mouse emulator
 
 	# Neovim
-	neovim
+	neovim-git
 	xclip
 	ripgrep
 	fd
@@ -87,7 +87,7 @@ done
 echo
 echo "Install config files"
 
-./install-other.sh
+./install-profiles.sh
 
 sudo rm /etc/environment
 sudo rm /etc/pacman.conf
@@ -101,7 +101,7 @@ sudo chsh -s /bin/zsh $USER
 git config --global user.email "typewria@student.21-school.ru"
 git config --global user.name "typewria"
 
-# localectl --no-convert set-x11-keymap us,ru
+localectl --no-convert set-x11-keymap us,ru
 
 export SUDO_FILE="/etc/sudoers.d/00_$USER"
 export SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/systemctl suspend"
