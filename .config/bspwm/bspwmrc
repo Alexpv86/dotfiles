@@ -1,0 +1,44 @@
+#! /bin/sh
+
+# sudo VBoxService
+# VBoxClient-all
+#sudo kmonad /etc/kmonad/gaming_kb_vb.kbd &
+
+~/.config/additional/bspwm.sh &
+killall wallp-run.sh &>/dev/null
+~/.config/wallpapers/wallp-run.sh &
+killall picom-run.sh &>/dev/null
+~/.config/picom/picom-run.sh &
+
+pgrep -x sxhkd >/dev/null || sxhkd &
+xsetroot -cursor_name left_ptr &
+
+/usr/lib/xfce-polkit/xfce-polkit &
+xbanish &
+
+telegram-desktop &
+kbdd &
+
+bspc config border_width 0
+bspc config window_gap 8
+
+bspc config automatic_scheme spiral
+
+#bspc config single_monocle false
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle false
+bspc config focus_follows_pointer true
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+
+bspc rule -a Alacritty # desktop='' follow=on
+bspc rule -a Code desktop=''
+bspc rule -a Neovim desktop='' follow=on
+bspc rule -a qutebrowser desktop='󰖟' follow=on
+bspc rule -a Yandex-browser desktop='󰖟' follow=on
+bspc rule -a TelegramDesktop desktop='1'

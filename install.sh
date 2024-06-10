@@ -1,28 +1,114 @@
 #!/bin/bash
 
-# system
-bash system/install.sh
+if [[ ! $(command -v paru) ]]; then
+	git clone https://aur.archlinux.org/paru-bin.git
+	cd paru-bin || exit
+	makepkg -si
+	cd ..
+	rm -rf paru-bin
+fi
 
-# kmonad
-bash kmonad/install.sh
+mainpkg=(
+	# Fonts
+	ttf-jetbrains-mono
+	ttf-jetbrains-mono-nerd
+	ttf-nerd-fonts-symbols
+	awesome-terminal-fonts
 
-# alacritty
-bash alacritty/install.sh
+	# System
+	lxappearance
+	qt5ct
+	man-db
+	xorg-xrandr
+	zsh
+	lsd
+	xkb-switch
+	xorg-xsetroot
+	kbdd
+	bat
 
-# zsh
-bash zsh/install.sh
+	picom
+	rofi # menu
+	polybar
+	alacritty # terminal
+	stow      # config manager
+	xfce-polkit
 
-# polybar
-bash polybar/install.sh
+	warpd # Mouse emulator
 
-# picom
-bash picom/install.sh
+	# Neovim
+	neovim-git
+	xclip
+	ripgrep
+	fd
+	jq
 
-# thunar
-bash thunar/install.sh
+	# Thunar (explorer)
+	thunar
+	thunar-volman
+	thunar-archive-plugin
+	thunar-media-tags-plugin
+	gvfs
+	tumbler
+	unzip
+	unrar
+	xarchiver
 
-# qutebrowser
-bash qutebrowser/install.sh
+	yandex-browser
 
-# neovim
-bash nvim/install.sh
+	virtualbox-guest-utils
+	lazygit
+	feh
+	gtest
+	tmux
+	gcovr
+	bear
+
+	valgrind
+)
+
+for pkg in ${mainpkg[@]}; do
+	paru -Qi ${pkg} &>/dev/null
+
+	if [[ $? == 1 ]] &>/dev/null; then
+		paru -S ${pkg} --noconfirm --needed &>/dev/null
+
+		paru -Qi ${pkg} &>/dev/null
+		if [[ $? == 0 ]] &>/dev/null; then
+			echo "${pkg} is installed"
+		else
+			echo "ERROR: ${pkg} failed to install"
+		fi
+	else
+		echo "${pkg} is already installed"
+	fi
+done
+
+echo
+echo "Install config files"
+
+./install-profiles.sh
+
+sudo rm /etc/environment
+sudo rm /etc/pacman.conf
+stow -D -v .
+stow -v .
+sudo stow -D -v -t / root/
+sudo stow -v -t / root/
+
+sudo chsh -s /bin/zsh $USER
+
+git config --global user.email "typewria@student.21-school.ru"
+git config --global user.name "typewria"
+
+localectl --no-convert set-x11-keymap us,ru
+
+export SUDO_FILE="/etc/sudoers.d/00_$USER"
+export SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/systemctl suspend"
+sudo grep -qF "$SUDO_STR" "$SUDO_FILE" || sudo -E bash -c 'echo "$SUDO_STR" >> $SUDO_FILE'
+SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/wg-quick"
+sudo grep -qF "$SUDO_STR" "$SUDO_FILE" || sudo -E bash -c 'echo "$SUDO_STR" >> $SUDO_FILE'
+SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/reboot"
+sudo grep -qF "$SUDO_STR" "$SUDO_FILE" || sudo -E bash -c 'echo "$SUDO_STR" >> $SUDO_FILE'
+
+cp -rf .local/share/* ~/.local/share/
