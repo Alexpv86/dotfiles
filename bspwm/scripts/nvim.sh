@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "^/.config/nvim" >> "${STOW_IGNORE_FILE}"
+
 FROM_DIR="${CONFIG_DIR}/nvim"
 TO_DIR="${HOME}/.config/nvim"
 
