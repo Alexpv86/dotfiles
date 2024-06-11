@@ -3,7 +3,7 @@
 $(dirname ${0})/get_bing.sh
 sleep 900
 
-folder="$HOME/Documents/Wallpapers"
+folder="$HOME/Wallpapers"
 extensions=("jpg" "png" "bmp" "jpeg")
 
 files=()

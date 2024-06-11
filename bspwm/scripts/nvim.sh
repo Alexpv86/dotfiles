@@ -6,6 +6,7 @@ FROM_DIR="${CONFIG_DIR}/nvim"
 TO_DIR="${HOME}/.config/nvim"
 
 mkdir -p "${TO_DIR}"
+
 rm -rf "${TO_DIR}/lua"
 ln -s "${FROM_DIR}/lua" "${TO_DIR}"
 

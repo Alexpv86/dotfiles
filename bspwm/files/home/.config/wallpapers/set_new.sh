@@ -1,5 +1,5 @@
 #!/bin/bash
-folder="$HOME/Documents/Wallpapers"
+folder="$HOME/Wallpapers"
 extensions=("jpg" "png" "bmp" "jpeg" "gif")
 
 files=()
