@@ -87,7 +87,7 @@ done
 echo
 echo "Install config files"
 
-./profiles/install-profiles.sh
+bash profiles/install.sh
 
 sudo rm /etc/environment
 sudo rm /etc/pacman.conf
