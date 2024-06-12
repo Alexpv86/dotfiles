@@ -3,6 +3,8 @@
 TO_DIR="${HOME}/.config/nvim"
 
 mkdir -p "${TO_DIR}"
+
+echo "nvim config configured."
 # rm -rf ${TO_DIR}/lua
 # rm -rf ${TO_DIR}/spell
 # rm -rf ${TO_DIR}/init.lua

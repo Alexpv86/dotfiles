@@ -2,7 +2,7 @@
 
 BASE_DIR="$(realpath $(dirname ${0}))"
 
-export ROOT_DIR="${BASE_DIR}/files"
+export ROOT_DIR="${BASE_DIR}/root"
 export HOME_DIR="${ROOT_DIR}/home"
 export CONFIG_DIR="${HOME_DIR}/.config"
 

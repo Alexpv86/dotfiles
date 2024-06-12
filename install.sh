@@ -10,86 +10,12 @@ fi
 
 echo
 echo "Install config files"
-bash bspwm/install.sh
+bash files/install.sh
 bash profiles/install.sh
 
-mainpkg=(
-	# Fonts
-	ttf-jetbrains-mono
-	ttf-jetbrains-mono-nerd
-	ttf-nerd-fonts-symbols
-	awesome-terminal-fonts
-
-	# System
-	lxappearance
-	qt5ct
-	man-db
-	xorg-xrandr
-	zsh
-	lsd
-	xkb-switch
-	xorg-xsetroot
-	kbdd
-	bat
-
-	picom
-	rofi # menu
-	polybar
-	alacritty # terminal
-	stow      # config manager
-	xfce-polkit
-
-	warpd # Mouse emulator
-
-	# Neovim
-	neovim-git
-	xclip
-	ripgrep
-	fd
-	jq
-
-	# Thunar (explorer)
-	thunar
-	thunar-volman
-	thunar-archive-plugin
-	thunar-media-tags-plugin
-	gvfs
-	tumbler
-	unzip
-	unrar
-	xarchiver
-
-	yandex-browser
-
-	virtualbox-guest-utils
-	lazygit
-	feh
-	gtest
-	tmux
-	gcovr
-	bear
-
-	valgrind
-)
-
-for pkg in ${mainpkg[@]}; do
-	paru -Qi ${pkg} &>/dev/null
-
-	if [[ $? == 1 ]] &>/dev/null; then
-		paru -S ${pkg} --noconfirm --needed &>/dev/null
-
-		paru -Qi ${pkg} &>/dev/null
-		if [[ $? == 0 ]] &>/dev/null; then
-			echo "${pkg} is installed"
-		else
-			echo "ERROR: ${pkg} failed to install"
-		fi
-	else
-		echo "${pkg} is already installed"
-	fi
-done
-
-sudo chsh -s /bin/zsh $USER
+if [[ ${SHELL} != "/bin/zsh" ]]; then
+	sudo chsh -s /bin/zsh ${USER}
+fi
 
 git config --global user.email "typewria@student.21-school.ru"
 git config --global user.name "typewria"
