@@ -8,6 +8,11 @@ if [[ ! $(command -v paru) ]]; then
 	rm -rf paru-bin
 fi
 
+echo
+echo "Install config files"
+bash bspwm/install.sh
+bash profiles/install.sh
+
 mainpkg=(
 	# Fonts
 	ttf-jetbrains-mono
@@ -84,18 +89,6 @@ for pkg in ${mainpkg[@]}; do
 	fi
 done
 
-echo
-echo "Install config files"
-
-bash profiles/install.sh
-
-sudo rm /etc/environment
-sudo rm /etc/pacman.conf
-stow -D -v home/
-stow -v home/
-sudo stow -D -v -t / root/
-sudo stow -v -t / root/
-
 sudo chsh -s /bin/zsh $USER
 
 git config --global user.email "typewria@student.21-school.ru"
@@ -110,5 +103,3 @@ SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/wg-quick"
 sudo grep -qF "$SUDO_STR" "$SUDO_FILE" || sudo -E bash -c 'echo "$SUDO_STR" >> $SUDO_FILE'
 SUDO_STR="$USER ALL= NOPASSWD: /usr/bin/reboot"
 sudo grep -qF "$SUDO_STR" "$SUDO_FILE" || sudo -E bash -c 'echo "$SUDO_STR" >> $SUDO_FILE'
-
-cp -rf .local/share/* ~/.local/share/
