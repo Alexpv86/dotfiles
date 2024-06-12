@@ -11,7 +11,6 @@ fi
 echo
 echo "Install config files"
 bash files/install.sh
-bash profiles/install.sh
 
 if [[ ${SHELL} != "/bin/zsh" ]]; then
 	sudo chsh -s /bin/zsh ${USER}

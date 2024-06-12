@@ -14,7 +14,5 @@ for pkg in ${mainpkg[@]}; do
 		else
 			echo "ERROR: ${pkg} failed to install"
 		fi
-	else
-		echo "${pkg} is already installed"
 	fi
 done

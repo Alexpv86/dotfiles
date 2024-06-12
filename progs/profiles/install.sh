@@ -6,11 +6,14 @@ PROFILES=($(find ${PROFILES_DIR}/* -maxdepth 0 -type d))
 if [[ ${#PROFILES[@]} == 1 ]]; then
 	bash "${PROFILES[0]}/install.sh"
 elif [[ ${#PROFILES[@]} > 1 ]]; then
+	echo
+	echo "Доступные профили для установки программ:"
+	echo "-----------------------------------------"
 	for i in "${!PROFILES[@]}"; do
 		echo "$((i + 1)). ${PROFILES[i]##*/}"
 	done
-	echo
-	echo "q. --->Выход<---"
+	echo "-----------------------------------------"
+	echo "q. ->Выход<-"
 
 	if [[ ${#PROFILES[@]} < 9 ]]; then
 		READ_ARGS="-n1"
@@ -21,7 +24,6 @@ elif [[ ${#PROFILES[@]} > 1 ]]; then
 		read ${READ_ARGS} -p "Введите номер выбранного варианта: " choice
 		echo
 
-		# Проверка выбора пользователя и копирование соответствующей папки
 		if ! [[ "$choice" =~ ^[0-9]+$ ]]; then
 			if [ "$choice" = "q" ]; then
 				echo

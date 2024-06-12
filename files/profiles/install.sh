@@ -10,11 +10,14 @@ PROFILES=($(find ${PROFILES_DIR}/* -maxdepth 0 -type d))
 if [[ ${#PROFILES[@]} == 1 ]]; then
 	bash "${PROFILES[0]}/install.sh"
 elif [[ ${#PROFILES[@]} > 1 ]]; then
+	echo
+	echo "Доступные профили:"
+	echo "------------------"
 	for i in "${!PROFILES[@]}"; do
 		echo "$((i + 1)). ${PROFILES[i]##*/}"
 	done
-	echo
-	echo "q. --->Выход<---"
+	echo "------------------"
+	echo "q. -> Выход <-"
 
 	if [[ ${#PROFILES[@]} < 9 ]]; then
 		READ_ARGS="-n1"

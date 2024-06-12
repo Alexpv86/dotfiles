@@ -18,12 +18,14 @@ done
 
 echo ".local" >>${STOW_IGNORE_FILE}
 cd ${HOME_DIR}
-stow -v -R-t ${HOME} .
+stow -R-t ${HOME} .
 echo "Home config stowed."
 
 sudo rm -f /etc/environment
 sudo rm -f /etc/pacman.conf
 echo "^/home" >>${STOW_IGNORE_ROOT_FILE}
 cd ${ROOT_DIR}
-sudo stow -v -R -t / .
+sudo stow -R -t / .
 echo "Root config stowed."
+
+bash "${BASE_DIR}/profiles/install.sh"
