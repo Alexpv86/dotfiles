@@ -1,1 +1,0 @@
-/home/alex/tmp/dotfiles/profiles/main/bspwm/additional.sh

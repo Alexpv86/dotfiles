@@ -7,23 +7,23 @@ export HOME_DIR="${ROOT_DIR}/home"
 export CONFIG_DIR="${HOME_DIR}/.config"
 
 export STOW_IGNORE_FILE="${HOME_DIR}/.stow-local-ignore"
-echo -n > ${STOW_IGNORE_FILE}
+echo -n >${STOW_IGNORE_FILE}
 export STOW_IGNORE_ROOT_FILE="${ROOT_DIR}/.stow-local-ignore"
-echo -n > ${STOW_IGNORE_ROOT_FILE}
+echo -n >${STOW_IGNORE_ROOT_FILE}
 
 scripts=($(ls -d ${BASE_DIR}/scripts/*.sh))
 for i in "${!scripts[@]}"; do
 	bash "${scripts[i]##}"
 done
 
-echo ".local" >> ${STOW_IGNORE_FILE}
+echo ".local" >>${STOW_IGNORE_FILE}
 cd ${HOME_DIR}
-stow -R -t ${HOME} .
+stow -v -R-t ${HOME} .
 echo "Home config stowed."
 
 sudo rm -f /etc/environment
 sudo rm -f /etc/pacman.conf
-echo "^/home" >> ${STOW_IGNORE_ROOT_FILE}
+echo "^/home" >>${STOW_IGNORE_ROOT_FILE}
 cd ${ROOT_DIR}
 sudo stow -v -R -t / .
 echo "Root config stowed."

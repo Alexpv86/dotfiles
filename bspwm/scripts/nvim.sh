@@ -3,9 +3,9 @@
 TO_DIR="${HOME}/.config/nvim"
 
 mkdir -p "${TO_DIR}"
-rm -rf ${TO_DIR}/lua
-rm -rf ${TO_DIR}/spell
-rm -rf ${TO_DIR}/init.lua
+# rm -rf ${TO_DIR}/lua
+# rm -rf ${TO_DIR}/spell
+# rm -rf ${TO_DIR}/init.lua
 
 # echo "^/.config/nvim" >> "${STOW_IGNORE_FILE}"
 #
