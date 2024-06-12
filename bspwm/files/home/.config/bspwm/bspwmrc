@@ -4,7 +4,7 @@
 # VBoxClient-all
 #sudo kmonad /etc/kmonad/gaming_kb_vb.kbd &
 
-~/.config/additional/bspwm.sh &
+~/.config/bspwm/additional.sh &
 killall wallp-run.sh &>/dev/null
 ~/.config/wallpapers/wallp-run.sh &
 killall picom-run.sh &>/dev/null
