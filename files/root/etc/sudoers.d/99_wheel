@@ -1,0 +1,4 @@
+%wheel ALL=(ALL) ALL
+%wheel ALL= NOPASSWD: /usr/bin/systemctl suspend
+%wheel ALL= NOPASSWD: /usr/bin/wg-quick
+%wheel ALL= NOPASSWD: /usr/bin/reboot
