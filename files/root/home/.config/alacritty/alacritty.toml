@@ -31,15 +31,15 @@ foreground = "#fafafa"
 size = 12.0
 
 [font.bold]
-family = "JetBrainsMono"
+family = "MesloLGS NF"
 style = "Bold"
 
 [font.normal]
-family = "JetBrainsMono"
+family = "MesloLGS NF"
 style = "Medium"
 
 [scrolling]
-history = 300
+history = 1000
 
 [window]
 opacity = 0.9
