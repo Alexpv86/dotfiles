@@ -1,7 +1,5 @@
 #! /bin/sh
 
-# sudo VBoxService
-# VBoxClient-all
 #sudo kmonad /etc/kmonad/gaming_kb_vb.kbd &
 
 ~/.config/bspwm/additional.sh &

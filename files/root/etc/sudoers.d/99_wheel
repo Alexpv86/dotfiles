@@ -2,3 +2,5 @@
 %wheel ALL= NOPASSWD: /usr/bin/systemctl suspend
 %wheel ALL= NOPASSWD: /usr/bin/wg-quick
 %wheel ALL= NOPASSWD: /usr/bin/reboot
+%wheel ALL= NOPASSWD: /usr/sbin/VBoxService
+%wheel ALL= NOPASSWD: /usr/bin/VBoxService
