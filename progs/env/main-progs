@@ -17,9 +17,12 @@ bat
 picom
 rofi
 polybar
-alacritty
-stow
 xfce-polkit
+
+alacritty
+tmux
+
+stow
 
 warpd
 
@@ -43,12 +46,11 @@ yandex-browser
 
 lazygit
 feh
-gtest
-tmux
+
 gcovr
 bear
-
 valgrind
+gtest
 
 zsh
 oh-my-zsh-git
