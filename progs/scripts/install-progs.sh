@@ -1,7 +1,11 @@
 #!/bin/bash
 
 IFS=$'\n'
-readarray mainpkg <"${ENV_DIR}/main-progs"
+if [[ ${1} == "" ]]; then
+	readarray mainpkg <"${ENV_DIR}/main-progs"
+else
+	readarray mainpkg <"${ENV_DIR}/${1}"
+fi
 
 CHECK_CNT=0
 INSTALLED_CNT=0

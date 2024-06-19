@@ -41,7 +41,6 @@ xarchiver
 
 yandex-browser
 
-virtualbox-guest-utils
 lazygit
 feh
 gtest
@@ -57,3 +56,4 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 zsh-theme-powerlevel10k-git
 zsh-fzf-plugin-git
+zoxide
