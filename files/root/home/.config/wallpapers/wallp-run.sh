@@ -19,6 +19,6 @@ fi
 
 while [[ true ]]; do
 	random_file="${files[RANDOM % ${#files[@]}]}"
-	feh --bg-center --no-fehbg "${random_file}" &>/dev/null || exit
+	feh --bg-fill --no-fehbg "${random_file}" &>/dev/null || exit
 	sleep 900
 done

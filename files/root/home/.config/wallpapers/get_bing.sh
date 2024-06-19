@@ -9,4 +9,4 @@ if ! [[ -f ${filename} ]]; then
 	curl -o ${filename} "https://bing.com$(echo $BACKGROUND_META | jq -r '.images[0].url')"
 fi
 
-feh --bg-center --no-fehbg "${filename}"
+feh --bg-fill --no-fehbg "${filename}"

@@ -1,5 +1,5 @@
 #!/bin/bash
-folder="$HOME/Wallpapers"
+folder="$HOME/Wallpapers/"
 extensions=("jpg" "png" "bmp" "jpeg" "gif")
 
 files=()
@@ -16,4 +16,4 @@ fi
 random_file="${files[RANDOM % ${#files[@]}]}"
 
 echo "random file: " ${random_file}
-feh --bg-center --no-fehbg  "${random_file}"
+feh --bg-fill --no-fehbg "${random_file}"
