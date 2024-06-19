@@ -14,4 +14,6 @@ if [[ ${#files[@]} == 0 ]]; then
 fi
 
 random_file="${files[RANDOM % ${#files[@]}]}"
-feh --bg-scale --no-fehbg  "${random_file}"
+
+echo "random file: " ${random_file}
+feh --bg-center --no-fehbg  "${random_file}"
