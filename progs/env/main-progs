@@ -8,7 +8,6 @@ lxappearance
 qt5ct
 man-db
 xorg-xrandr
-zsh
 lsd
 xkb-switch
 xorg-xsetroot
@@ -51,3 +50,10 @@ gcovr
 bear
 
 valgrind
+
+zsh
+oh-my-zsh-git
+zsh-autosuggestions
+zsh-syntax-highlighting
+zsh-theme-powerlevel10k-git
+zsh-fzf-plugin-git

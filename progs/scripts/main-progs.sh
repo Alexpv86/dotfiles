@@ -9,6 +9,8 @@ ERROR_CNT=0
 
 LOG_FILE="/tmp/dotfiles-progs.log"
 
+echo -e "\nУстановка программ:\n"
+
 for pkg in ${mainpkg[@]}; do
 	# skeap comments
 	if [[ ${pkg:0:1} == '#' ]]; then
@@ -22,15 +24,16 @@ for pkg in ${mainpkg[@]}; do
 		continue
 	fi
 
+	echo -n "${pkg} устанавливается..."
 	paru -Sy ${pkg} --noconfirm --needed &>${LOG_FILE}
 
 	paru -Qi ${pkg} &>/dev/null
 	if [[ $? == 0 ]] &>/dev/null; then
-		echo "${pkg} is installed"
+		echo " OK"
+
 		((INSTALLED_CNT++))
 	else
-		echo "ERROR: ${pkg} failed to install:"
-		echo
+		echo -e " ERROR:\n"
 		cat ${LOG_FILE}
 		echo
 
@@ -40,7 +43,10 @@ done
 
 rm -f ${LOG_FILE}
 
-echo "Установка программ:"
+if ((INSTALLED_CNT > 0)); then
+	echo
+fi
+
 echo "  - проверено:   ${CHECK_CNT}"
 echo "  - установлено: ${INSTALLED_CNT}"
 echo "  - ошибок:      ${ERROR_CNT}"
