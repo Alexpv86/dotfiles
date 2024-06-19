@@ -118,4 +118,4 @@ alias b="bear -- make $1"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval `ssh-agent -s` &>/dev/null && ssh-add ~/.ssh/gitrsa &>/dev/null
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
