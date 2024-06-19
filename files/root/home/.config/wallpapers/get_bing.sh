@@ -1,5 +1,5 @@
 #!/bin/bash
-folder="$HOME/Wallpapers"
+folder="$HOME/wallpapers"
 
 BACKGROUND_META=$(curl 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US')
 filename=$(echo $BACKGROUND_META | jq -r '.images[0].urlbase')
