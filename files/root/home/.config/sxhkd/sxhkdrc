@@ -166,3 +166,6 @@ alt + shift + ctrl + z
 
 alt + shift + ctrl + x
   xkb-switch -s ru
+
+super + ctrl + l
+  killall picom ; slock && picom &

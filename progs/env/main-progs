@@ -21,6 +21,12 @@ xfce-polkit
 
 alacritty
 tmux
+kitty
+
+ffmpegthumbnailer
+p7zip
+poppler
+imagemagick
 
 stow
 
@@ -59,3 +65,5 @@ zsh-syntax-highlighting
 zsh-theme-powerlevel10k-git
 zsh-fzf-plugin-git
 zoxide
+
+slock
