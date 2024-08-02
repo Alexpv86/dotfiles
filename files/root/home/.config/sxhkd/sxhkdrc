@@ -7,6 +7,9 @@ super + q
 super + e
 	~/.config/wallpapers/set_new.sh
 
+super + alt + e
+	~/.config/wallpapers/get_bing.sh
+
 super + x
   warpd --hint --oneshot; warpd --click 1
 
