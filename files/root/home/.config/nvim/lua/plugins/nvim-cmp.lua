@@ -65,16 +65,22 @@ local function select_next_kind()
     end
   end
 end
-
+cmp.setup({
+  window = {
+    completion = {
+      border = { "", "", "", "", "", "", "", "│" }, -- Вертикальная полоса слева
+    },
+  },
+})
 return {
   {
     "nvim-cmp",
     opts = function(_, opts)
-      -- opts.window = {
-      --   completion = {
-      --     col_offset = 60, -- смещение вправо
-      --   },
-      -- }
+      opts.window = {
+        completion = {
+          col_offset = 5, -- смещение вправо
+        },
+      }
       --
       -- opts.experimental = opts.experimental or {}
       opts.experimental.ghost_text = false
@@ -95,6 +101,10 @@ return {
           select_prev_kind()
         end,
       })
+
+      opts.completion = {
+        completeopt = "menu,menuone,noselect",
+      }
     end,
   },
 }
