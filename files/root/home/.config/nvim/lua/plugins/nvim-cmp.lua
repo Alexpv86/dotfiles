@@ -1,11 +1,27 @@
 return {
-  "nvim-cmp",
-  opts = function(_, opts)
-    table.remove(opts.sources, 1)
-    table.insert(opts.sources, 1, {
-      name = "codeium",
-      group_index = 1,
-      priority = -100,
-    })
-  end,
+  {
+    "nvim-cmp",
+    opts = function(_, opts)
+      -- opts.window = {
+      --   completion = {
+      --     col_offset = 60, -- смещение вправо
+      --   },
+      -- }
+      --
+      -- opts.experimental = opts.experimental or {}
+      opts.experimental.ghost_text = false
+
+      local cmp = require("cmp")
+      opts.mapping = cmp.mapping.preset.insert({
+        ["<C-Space>"] = function(fallback)
+          if cmp.visible() then
+            cmp.mapping.abort()(fallback)
+          else
+            cmp.mapping.complete()(fallback)
+          end
+        end,
+        ["<CR>"] = LazyVim.cmp.confirm({ select = true }),
+      })
+    end,
+  },
 }
