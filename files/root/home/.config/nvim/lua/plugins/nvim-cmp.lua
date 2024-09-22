@@ -6,8 +6,8 @@ local function select_prev_kind()
   local current_entry = cmp.get_selected_entry()
 
   if not current_entry then
-    cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-    return
+    cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+    current_entry = cmp.get_selected_entry()
   end
 
   local current_kind = current_entry.completion_item.kind
@@ -43,7 +43,7 @@ local function select_next_kind()
   if not current_entry then
     -- Если ничего не выбрано, просто выбираем первый элемент
     cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-    return
+    current_entry = cmp.get_selected_entry()
   end
 
   -- Текущий 'kind' (категория) выбранной записи
@@ -65,23 +65,20 @@ local function select_next_kind()
     end
   end
 end
+
 cmp.setup({
   window = {
     completion = {
       border = { "", "", "", "", "", "", "", "│" }, -- Вертикальная полоса слева
+      col_offset = 5, -- смещение вправо
     },
   },
 })
+
 return {
   {
     "nvim-cmp",
     opts = function(_, opts)
-      opts.window = {
-        completion = {
-          col_offset = 5, -- смещение вправо
-        },
-      }
-      --
       -- opts.experimental = opts.experimental or {}
       opts.experimental.ghost_text = false
 
