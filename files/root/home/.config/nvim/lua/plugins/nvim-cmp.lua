@@ -99,11 +99,19 @@ return {
           end
         end,
         ["<CR>"] = LazyVim.cmp.confirm({ select = true }),
-        ["<Right>"] = function()
-          select_next_kind()
+        ["<Right>"] = function(fallback)
+          if cmp.visible() then
+            select_next_kind()
+          else
+            fallback()
+          end
         end,
-        ["<Left>"] = function()
-          select_prev_kind()
+        ["<Left>"] = function(fallback)
+          if cmp.visible() then
+            select_prev_kind()
+          else
+            fallback()
+          end
         end,
       })
 
