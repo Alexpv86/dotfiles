@@ -8,6 +8,10 @@ local function select_prev_kind()
   if not current_entry then
     cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
     current_entry = cmp.get_selected_entry()
+
+    if not current_entry then
+      return
+    end
   end
 
   local current_kind = current_entry.completion_item.kind
@@ -44,6 +48,10 @@ local function select_next_kind()
     -- Если ничего не выбрано, просто выбираем первый элемент
     cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
     current_entry = cmp.get_selected_entry()
+
+    if not current_entry then
+      return
+    end
   end
 
   -- Текущий 'kind' (категория) выбранной записи

@@ -18,7 +18,7 @@ super + alt + x
 
 # terminal emulator
 super + Return
-	kitty -e tmux
+	wezterm -e tmux
 
 # program launcher
 super + d
