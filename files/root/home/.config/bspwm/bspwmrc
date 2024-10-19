@@ -18,6 +18,8 @@ xbanish &
 telegram-desktop &
 kbdd &
 
+xkbcomp $HOME/.config/xkb/my $DISPLAY &>/dev/null
+
 # kitty --class My-Projects --hold tmux new-session 'yazi ~/projects' &
 
 bspc config border_width 0

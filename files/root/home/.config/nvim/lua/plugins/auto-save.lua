@@ -11,16 +11,16 @@ return {
       -- add your options that should be passed to the setup() function here
       -- position = "right",
       enabled = true,
-      execution_message = {
-        message = function() -- message to print on save
-          return ""
-        end,
-      },
+      -- execution_message = {
+      --   message = function() -- message to print on save
+      --     return ""
+      --   end,
+      -- },
 
       trigger_events = { -- See :h events
         immediate_save = { "InsertLeave" }, -- vim events that trigger an immediate save
         defer_save = { "TextChanged" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
-        cancel_defered_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
+        cancel_deferred_save = { "InsertEnter" }, -- vim events that cancel a pending deferred save
       },
       -- function that takes the buffer handle and determines whether to save the current buffer or not
       -- return true: if buffer is ok to be saved
