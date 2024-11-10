@@ -22,7 +22,8 @@ stow -R-t ${HOME} .
 echo "Home config stowed."
 
 sudo rm -f /etc/environment
-sudo rm -f /etc/pacman.conf
+# sudo rm -f /etc/pacman.conf
+sudo mv $(ROOT_DIR)/etc/pacman.conf /etc/pacman.conf
 echo "^/home" >>${STOW_IGNORE_ROOT_FILE}
 cd ${ROOT_DIR}
 sudo stow -R -t / .
